@@ -12,16 +12,15 @@ end
 -- Key mappings --
 
 function handle_key_00(pressed)
-    if pressed then
-        keybow.set_pixel(6, 255, 255, 255) 
-    end
 end
 
 function handle_key_01(pressed)
 end
 
 function handle_key_02(pressed)
-    pages.set_page(pages.UNUSED_3)
+    if (not pressed) then
+        pages.set_page(pages.UNUSED_3)
+    end
 end
 
 function handle_key_03(pressed)
@@ -31,7 +30,9 @@ function handle_key_04(pressed)
 end
 
 function handle_key_05(pressed)
-    pages.set_page(pages.UNUSED_2)
+    if (not pressed) then
+        pages.set_page(pages.UNUSED_2)
+    end
 end
 
 function handle_key_06(pressed)
@@ -41,7 +42,9 @@ function handle_key_07(pressed)
 end
 
 function handle_key_08(pressed)
-    pages.set_page(pages.CODING)
+    if (not pressed) then
+        pages.set_page(pages.CODING)
+    end
 end
 
 function handle_key_09(pressed)
@@ -51,6 +54,8 @@ function handle_key_10(pressed)
 end
 
 function handle_key_11(pressed)
-    pages.set_page(pages.DESKTOP)
+    if (not pressed) then
+        pages.set_page(pages.DESKTOP)
+    end
 end
 
