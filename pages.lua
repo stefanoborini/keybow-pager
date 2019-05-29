@@ -57,7 +57,7 @@ function pages.set_page(page_)
     
     for i = 1, 8, 1
     do
-        if (pages.operations[pages.page][i] != nil) then
+        if (pages.operations[pages.page][i] ~= nil) then
             button.set_color(button_map[i], colors.BLUE)
         end
     end
