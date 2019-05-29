@@ -288,3 +288,15 @@ end
 function keybow.release_key(key)
     keybow.set_key(key, false)
 end
+
+function keybow.tap_key_with_modifiers(key, ...)
+    for i = 1, select('#', ...) do
+        local j = select(i, ...)
+        keybow.set_modifier(j, keybow.KEY_DOWN)
+    end
+    keybow.tap_key(key)
+    for i = 1, select('#', ...) do
+        local j = select(i, ...)
+        keybow.set_modifier(j, keybow.KEY_UP)
+    end
+end

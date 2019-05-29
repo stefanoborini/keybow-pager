@@ -14,17 +14,17 @@ pages.UNUSED_3 = 3
 
 pages.operations = {}
 pages.operations[pages.DESKTOP] = {
-    nil, nil, nil, nil,
-    operations.back, operations.forward, nil, nil
+    nil,                     nil,                        nil, operations.text_bigger,
+    operations.browser_back, operations.browser_forward, nil, operations.text_smaller
 }
 
 pages.operations[pages.CODING] = {
-    nil, nil, nil, nil,
-    nil, nil, nil, nil
+    operations.git_pull, operations.git_commit, operations.git_tree, nil,
+    operations.pycharm_back, operations.pycharm_to_declaration, nil, nil
 }
 
 pages.operations[pages.UNUSED_2] = {
-    nil, operations.back, nil, operations.back,
+    nil, nil, nil, nil,
     nil, nil, nil, nil
 }
 
@@ -33,14 +33,15 @@ pages.operations[pages.UNUSED_3] = {
     nil, nil, nil, nil
 }
 
+pages.button_map = {
+    button.ACTION_A0, button.ACTION_A1, button.ACTION_A2, button.ACTION_A3,
+    button.ACTION_B0, button.ACTION_B1, button.ACTION_B2, button.ACTION_B3
+}
+
 -- the current page. Default at startup is desktop.
 pages.page = pages.DESKTOP
 
 function pages.set_page(page_)
-    button_map = {
-        10, 7, 4, 1,
-        9, 6, 3, 0
-    }
     pages.page = page_
     button.set_color(button.TAB_0, color.NONE)
     button.set_color(button.TAB_1, color.NONE)
@@ -59,10 +60,27 @@ function pages.set_page(page_)
     for i = 1, 8, 1
     do
         if (pages.operations[pages.page][i] ~= nil) then
-            button.set_color(button_map[i], color.BLUE)
+            button.set_color(pages.button_map[i], color.BLUE)
         else
-            button.set_color(button_map[i], color.NONE)
+            button.set_color(pages.button_map[i], color.NONE)
         end
-
     end
 end
+
+function pages.get_operation_for_action_button(button_id)
+    for i = 1, 8, 1
+    do
+        if (pages.button_map[i] == button_id) then
+            return pages.operations[pages.page][i]
+        end
+    end
+    return nil
+end
+
+function pages.run_operation(button_id)
+    operation = pages.get_operation_for_action_button(button_id)
+    if (operation ~= nil) then
+        operation()
+    end
+end
+    
