@@ -1,4 +1,11 @@
+require 'keybow-pager/config'
+
+if (config.DEVELOP) then
+    require 'keybow-pager/mock_c_layer'
+end
+
 keybow = {}
+
 
 local KEYCODES         = "abcdefghijklmnopqrstuvwxyz1234567890\n\a\b\t -=[]\\#;'`,./"
 local SHIFTED_KEYCODES = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()\a\a\a\a\a_+{}|~:\"~<>?"
@@ -116,7 +123,6 @@ keybow.MEDIA_REFRESH = 0xfa
 keybow.MEDIA_CALC = 0xfb
 
 -- Functions exposed from C
-
 function keybow.set_modifier(key, state)
     keybow_set_modifier(key, state)
 end

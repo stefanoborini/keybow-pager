@@ -1,5 +1,6 @@
 require 'keybow-pager/keybow'
 require 'keybow-pager/colors'
+require 'keybow-pager/buttons'
 require 'keybow-pager/operations'
 
 pages = {}
@@ -58,8 +59,10 @@ function pages.set_page(page_)
     for i = 1, 8, 1
     do
         if (pages.operations[pages.page][i] ~= nil) then
-            button.set_color(button_map[i], colors.BLUE)
+            button.set_color(button_map[i], color.BLUE)
+        else
+            button.set_color(button_map[i], color.NONE)
         end
+
     end
 end
-
