@@ -24,7 +24,7 @@ pages.operations[pages.DESKTOP] = {
 }
 
 pages.operations[pages.CODING] = {
-    operations.git_pull, operations.git_commit, operations.git_tree, nil,
+    operations.git_pull, operations.git_commit_a, operations.git_tree, nil,
     operations.pycharm_back, operations.pycharm_to_declaration, nil, nil
 }
 
