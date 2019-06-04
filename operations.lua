@@ -18,6 +18,14 @@ function operations.text_smaller()
     keybow.tap_key_with_modifiers('-', keybow.LEFT_META)
 end
 
+function operations.scroll_up()
+    keybow.tap_key(keybow.UP_ARROW)
+end
+
+function operations.scroll_down()
+    keybow.tap_key(keybow.DOWN_ARROW)
+end
+
 function operations.pycharm_to_declaration()
     keybow.tap_key_with_modifiers('b', keybow.LEFT_META)
 end

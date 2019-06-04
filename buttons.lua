@@ -18,5 +18,9 @@ button.ACTION_B2 = 3
 button.ACTION_B3 = 0
 
 function button.set_color(button, color)
-    keybow.set_pixel(button, color[1], color[2], color[3]) 
+    if (color == nil) then
+        keybow.set_pixel(button, 0, 0, 0)
+    else
+        keybow.set_pixel(button, color[1], color[2], color[3]) 
+    end
 end  
