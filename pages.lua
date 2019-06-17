@@ -44,7 +44,7 @@ pages.operation_colors[pages.DESKTOP] = {
     color.GRAY, color.GRAY, color.DARK_YELLOW, color.DARK_GREEN
 }
 pages.operation_colors[pages.CODING] = {
-    color.RED,   color.RED,   color.RED, nil,        
+    color.RED,   color.RED,   color.RED, color.RED,        
     color.GREEN, color.GREEN, nil,       nil
 }
 pages.operation_colors[pages.UNUSED_2] = {
