@@ -10,6 +10,10 @@ function operations.browser_forward()
     keybow.tap_key_with_modifiers(']', keybow.LEFT_META)
 end
 
+function operations.chrome_close_tab()
+    keybow.tap_key_with_modifiers('w', keybow.LEFT_META)
+end
+
 function operations.text_bigger()
     keybow.tap_key_with_modifiers('+', keybow.LEFT_META)
 end
@@ -46,5 +50,10 @@ end
 
 function operations.git_tree()
     keybow.text("git tree")
+    keybow.tap_enter()
+end
+
+function operations.git_push()
+    keybow.text("git push")
     keybow.tap_enter()
 end
