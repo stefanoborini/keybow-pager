@@ -43,7 +43,7 @@ end
 
 function handle_key_05(pressed)
     if (pressed) then
-        pages.set_page(pages.UNUSED_2)
+        pages.set_page(pages.APPS)
     end
 end
 

@@ -57,3 +57,16 @@ function operations.git_push()
     keybow.text("git push")
     keybow.tap_enter()
 end
+
+function operations.open_chrome()
+	spotlight("chrome")
+end
+
+function spotlight(command)
+    modifier(keybow.SPACE, keybow.LEFT_META)
+    keybow.sleep(500)
+    keybow.text(command)
+    keybow.sleep(500)
+    keybow.tap_enter()
+    keybow.sleep(500)
+end

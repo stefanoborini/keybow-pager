@@ -8,13 +8,13 @@ pages = {}
 -- Desktop (for basic desktop/browsing)
 pages.DESKTOP = 0
 pages.CODING = 1
-pages.UNUSED_2 = 2
+pages.APPS = 2
 pages.UNUSED_3 = 3
 
 pages.colors = {}
 pages.colors[pages.DESKTOP] = color.RED;
 pages.colors[pages.CODING] = color.GREEN;
-pages.colors[pages.UNUSED_2] = color.BLUE;
+pages.colors[pages.APPS] = color.BLUE;
 pages.colors[pages.UNUSED_3] = color.YELLOW;
 
 pages.operations = {}
@@ -28,8 +28,8 @@ pages.operations[pages.CODING] = {
     operations.pycharm_back, operations.pycharm_to_declaration, nil, nil
 }
 
-pages.operations[pages.UNUSED_2] = {
-    nil, nil, nil, nil,
+pages.operations[pages.APPS] = {
+    operations.open_chrome, nil, nil, nil,
     nil, nil, nil, nil
 }
 
@@ -47,8 +47,8 @@ pages.operation_colors[pages.CODING] = {
     color.RED,   color.RED,   color.RED, color.RED,        
     color.GREEN, color.GREEN, nil,       nil
 }
-pages.operation_colors[pages.UNUSED_2] = {
-    nil, nil, nil, nil,
+pages.operation_colors[pages.APPS] = {
+    color.YELLOW, nil, nil, nil,
     nil, nil, nil, nil
 }
 pages.operation_colors[pages.UNUSED_3] = {
@@ -76,8 +76,8 @@ function pages.set_page(page_)
         button.set_color(button.TAB_0, pages.colors[pages.DESKTOP])
     elseif (pages.page == pages.CODING) then
         button.set_color(button.TAB_1, pages.colors[pages.CODING])
-    elseif (pages.page == pages.UNUSED_2) then
-        button.set_color(button.TAB_2, pages.colors[pages.UNUSED_2])
+    elseif (pages.page == pages.APPS) then
+        button.set_color(button.TAB_2, pages.colors[pages.APPS])
     elseif (pages.page == pages.UNUSED_3) then
         button.set_color(button.TAB_3, pages.colors[pages.UNUSED_3])
     end
